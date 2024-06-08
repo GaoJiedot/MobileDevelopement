@@ -42,6 +42,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_weight="1"
+
             app:srcCompat="@drawable/food" />
 
         <ImageView
@@ -127,6 +128,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:gravity="center"
+
             android:orientation="horizontal">
 
             <ImageView
@@ -134,6 +136,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
+                android:alpha="@dimen/material_emphasis_medium"
                 app:srcCompat="@drawable/home" />
 
             <ImageView
@@ -141,6 +144,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
+                android:alpha="@dimen/material_emphasis_medium"
                 app:srcCompat="@drawable/lesson_bottom" />
 
             <ImageView
@@ -148,6 +152,8 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
+
+                android:alpha="@dimen/material_emphasis_medium"
                 app:srcCompat="@drawable/message" />
 
             <ImageView
@@ -155,6 +161,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
+                android:alpha="@dimen/material_emphasis_medium"
                 app:srcCompat="@drawable/my" />
         </LinearLayout>
 
@@ -171,36 +178,40 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_weight="1"
+                android:alpha="@dimen/material_emphasis_medium"
                 android:gravity="center"
-                android:textSize="12sp"
-                android:text="主页" />
+                android:text="主页"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_weight="1"
+                android:alpha="@dimen/material_emphasis_medium"
                 android:gravity="center"
-                android:textSize="12sp"
-                android:text="动作库" />
+                android:text="动作库"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_weight="1"
+                android:alpha="@dimen/material_emphasis_medium"
                 android:gravity="center"
-                android:textSize="12sp"
-                android:text="消息" />
+                android:text="消息"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/textView7"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_weight="1"
+                android:alpha="@dimen/material_emphasis_medium"
                 android:gravity="center"
-                android:textSize="12sp"
-                android:text="我的" />
+                android:text="我的"
+                android:textSize="12sp" />
         </LinearLayout>
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
