@@ -1,7 +1,8 @@
 package com.example.mobiledevelopmentapp;
 
+import android.app.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Home extends AppCompatActivity {
+public class Setting extends AppCompatActivity {
 }

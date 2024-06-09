@@ -1,5 +1,4 @@
 package com.example.mobiledevelopmentapp;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,7 +12,6 @@ import androidx.core.view.WindowInsetsCompat;
 public class Login extends AppCompatActivity {
 
 
-    private Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +22,7 @@ public class Login extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-         button = findViewById(R.id.login_button);
+        Button button = findViewById(R.id.login_button);
     }
 
     public void onclick(View view) {
