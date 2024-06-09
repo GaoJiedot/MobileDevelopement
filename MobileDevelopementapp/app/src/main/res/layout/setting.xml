@@ -14,7 +14,7 @@
         app:layout_constraintTop_toBottomOf="@+id/bottomNavigationView4"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:background="@drawable/Nv_backgound">
+        android:background="@drawable/nv">
 
         <ImageView
             android:id="@+id/imageView17"
@@ -66,7 +66,7 @@
         android:layout_height="150dp"
         android:layout_marginStart="14dp"
         android:layout_marginEnd="14dp"
-        android:background="@drawable/Nv_backgound"
+        android:background="@drawable/nv"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -213,7 +213,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="392dp"
-        android:background="@drawable/Nv_backgound"
+        android:background="@drawable/nv"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
@@ -224,10 +224,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_paddingBottom="5dp"
             android:orientation="horizontal"
             android:paddingTop="10dp">
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -317,7 +315,7 @@
         android:id="@+id/bottomNavigationView"
         android:layout_width="414dp"
         android:layout_height="79dp"
-        android:background="@drawable/Nv_backgound"
+        android:background="@drawable/nv"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.666"
