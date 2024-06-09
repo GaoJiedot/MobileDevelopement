@@ -37,7 +37,7 @@
             android:layout_marginTop="10dp"
             android:paddingBottom="10dp"
             android:paddingLeft="20dp"
-            android:backgroundTint="@color/breakfirst">
+            android:backgroundTint="@color/green">
 
             <TextView
                 android:id="@+id/textView17"
@@ -96,7 +96,7 @@
             android:paddingLeft="20dp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:backgroundTint="@color/lunch">
+            android:backgroundTint="@color/yellow">
 
             <TextView
                 android:id="@+id/textView26"
@@ -155,7 +155,7 @@
             android:paddingLeft="20dp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:backgroundTint="@color/dinner"
+            android:backgroundTint="@color/blue"
             android:textColor="@color/black">
 
             <TextView
