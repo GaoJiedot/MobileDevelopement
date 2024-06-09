@@ -1,0 +1,4 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#FF2A82E4"/> <!-- 使用颜色资源 -->
+    <corners android:radius="40dp"/>
+</shape>
