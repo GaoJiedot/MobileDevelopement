@@ -1,14 +1,16 @@
-package com.example.myapplication;
+package com.example.Activity;
 
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ActionDetails extends AppCompatActivity {
+import com.example.myapplication.R;
+
+public class SportPlan extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.pushup);
+        setContentView(R.layout.sport_plan);
     }
 }

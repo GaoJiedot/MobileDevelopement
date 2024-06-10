@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -38,7 +37,7 @@
         android:layout_height="wrap_content"
         android:text="快速找到好友，纪录你的运动"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/phone_number_edittext"
+        app:layout_constraintBottom_toTopOf="@+id/login_et"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.221"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,13 +45,15 @@
         app:layout_constraintVertical_bias="0.31" />
 
     <EditText
-        android:id="@+id/phone_number_edittext"
+        android:id="@+id/login_et"
         android:layout_width="302dp"
         android:layout_height="58dp"
         android:layout_weight="1"
         android:background="@drawable/login_edittext_style"
         android:gravity="center"
         android:hint="请输入手机号码"
+        android:text="18668298732"
+        android:maxLength="11"
         android:inputType="phone"
         android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -68,17 +69,16 @@
         android:layout_height="58dp"
         android:background="@drawable/login_button_style"
         android:text="下一步"
-        android:onClick="onclick"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phone_number_edittext"
+        app:layout_constraintTop_toBottomOf="@+id/login_et"
         app:layout_constraintVertical_bias="0.084" />
 
     <CheckBox
-        android:id="@+id/checkBox3"
+        android:id="@+id/login_cb"
 
         android:layout_width="249dp"
         android:layout_height="48dp"

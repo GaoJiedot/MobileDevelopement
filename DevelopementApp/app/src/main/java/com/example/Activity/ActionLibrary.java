@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.Activity;
 
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -7,22 +7,23 @@ import android.widget.ListView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myapplication.Item.ListItem;
-import com.example.myapplication.adapter.ListAdapter;
+import com.example.Item.ListItem;
+import com.example.adapter.ListAdapter;
+import com.example.myapplication.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ActionLibrayActivity extends AppCompatActivity {
+public class ActionLibrary extends AppCompatActivity {
+
     private String[] data = {"全部运动", "胸部", "手臂", "背部", "腿部", "臀部"};
     private List<ListItem> itemList = new ArrayList<>();
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.actionlibrary);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(ActionLibrayActivity.this, R.layout.list_layout1, data);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(ActionLibrary.this, R.layout.list_layout1, data);
         ListView listView = (ListView) findViewById(R.id.al_lv);
         listView.setAdapter(adapter);
 

@@ -1,4 +1,4 @@
-package com.example.myapplication.adapter
+package com.example.adapter
         ;
 
 import android.content.Context;
@@ -12,7 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.myapplication.Item.ListItem;
+import com.example.Item.ListItem;
 import com.example.myapplication.R;
 
 import java.util.List;

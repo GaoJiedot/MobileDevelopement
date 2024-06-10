@@ -1,4 +1,4 @@
-package com.example.myapplication.Item;
+package com.example.Item;
 
 public class ListItem {
     private int imageResId;
