@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -24,22 +25,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name="com.example.Activity.Home"
-                    android:launchMode="singleTop"/>
-        <activity android:name="com.example.Activity.CookBook"
-                    android:launchMode="singleTop"/>
-        <activity android:name="com.example.Activity.ActionLibrary"
-                    android:launchMode="singleTop"/>
-        <activity android:name="com.example.Activity.BodyData"
-                    android:launchMode="singleTop"/>
-        <activity android:name="com.example.Activity.SportPlan"
-                    android:launchMode="singleTop"/>
-        <activity android:name="com.example.Activity.Message"
-                    android:launchMode="singleTop"/>
-        <activity android:name="com.example.Activity.Setting"
-                    android:launchMode="singleTop"/>
-        <activity android:name="com.example.Activity.ActionDetails"
-                    android:launchMode="singleTop"/>
+
     </application>
 
 </manifest>
