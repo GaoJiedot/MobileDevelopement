@@ -12,6 +12,7 @@
         >
         <activity
             android:name="com.example.Activity.Login"
+            android:launchMode="singleTop"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,14 +24,22 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name="com.example.Activity.Home"/>
-        <activity android:name="com.example.Activity.CookBook"/>
-        <activity android:name="com.example.Activity.ActionLibrary"/>
-        <activity android:name="com.example.Activity.BodyData"/>
-        <activity android:name="com.example.Activity.SportPlan"/>
-        <activity android:name="com.example.Activity.Message"/>
-        <activity android:name="com.example.Activity.Setting"/>
-        <activity android:name="com.example.Activity.ActionDetails"/>
+        <activity android:name="com.example.Activity.Home"
+                    android:launchMode="singleTop"/>
+        <activity android:name="com.example.Activity.CookBook"
+                    android:launchMode="singleTop"/>
+        <activity android:name="com.example.Activity.ActionLibrary"
+                    android:launchMode="singleTop"/>
+        <activity android:name="com.example.Activity.BodyData"
+                    android:launchMode="singleTop"/>
+        <activity android:name="com.example.Activity.SportPlan"
+                    android:launchMode="singleTop"/>
+        <activity android:name="com.example.Activity.Message"
+                    android:launchMode="singleTop"/>
+        <activity android:name="com.example.Activity.Setting"
+                    android:launchMode="singleTop"/>
+        <activity android:name="com.example.Activity.ActionDetails"
+                    android:launchMode="singleTop"/>
     </application>
 
 </manifest>

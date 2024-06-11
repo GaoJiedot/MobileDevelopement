@@ -52,30 +52,35 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Home.this,BodyData.class));
+                finish();
             }
         });
         sportPlan_iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Home.this, SportPlan.class));
+                finish();
             }
         });
         home_My_iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Home.this,Setting.class));
+                finish();
             }
         });
         home_Msg_iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Home.this,Message.class));
+                finish();
             }
         });
         home_Al_iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Home.this,ActionLibrary.class));
+                finish();
             }
         });
     }

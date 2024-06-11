@@ -55,6 +55,7 @@ public class Login extends AppCompatActivity {
                 } else {
                     Intent intent = new Intent(Login.this, Home.class);
                     startActivity(intent);
+                    finish();
                 }
             }
         });

@@ -32,18 +32,21 @@ public class Setting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Setting.this,Home.class));
+                finish();
             }
         });
         setting_Msg_iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Setting.this,Message.class));
+                finish();
             }
         });
         setting_Al_iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Setting.this,ActionLibrary.class));
+                finish();
             }
         });
     }

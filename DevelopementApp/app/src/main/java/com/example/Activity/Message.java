@@ -29,18 +29,21 @@ public class Message extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Message.this,Home.class));
+                finish();
             }
         });
         message_MY_iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Message.this,Setting.class));
+                finish();
             }
         });
         message_Al_iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Message.this,ActionLibrary.class));
+                finish();
             }
         });
     }

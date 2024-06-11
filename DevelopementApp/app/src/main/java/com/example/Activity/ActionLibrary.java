@@ -1,7 +1,10 @@
 package com.example.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 
@@ -16,17 +19,47 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ActionLibrary extends AppCompatActivity {
-
+    private ImageView al_Home_iv;
+    private ImageView al_Msg_iv;
+    private ImageView al_My_iv;
     private String[] data = {"全部运动", "胸部", "手臂", "背部", "腿部", "臀部"};
     private List<ListItem> itemList = new ArrayList<>();
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.actionlibrary);
+
+        al_Home_iv=(ImageView) findViewById(R.id.al_home_iv);
+        al_Msg_iv=(ImageView) findViewById(R.id.al_msg_iv);
+        al_My_iv=(ImageView) findViewById(R.id.al_my_iv);
+
+
+        al_Home_iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ActionLibrary.this,Home.class));
+                finish();
+            }
+        });
+        al_Msg_iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ActionLibrary.this,Message.class));
+                finish();
+            }
+        });
+        al_My_iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ActionLibrary.this,Setting.class));
+                finish();
+            }
+        });
+
+
         ArrayAdapter<String> adapter = new ArrayAdapter<>(ActionLibrary.this, R.layout.list_layout1, data);
         ListView listView = (ListView) findViewById(R.id.al_lv);
         listView.setAdapter(adapter);
-
         populateItemList();
         ListAdapter listAdapter = new ListAdapter(this, R.layout.list_layout2, itemList);
         ListView imageListView = findViewById(R.id.al_lv2);
@@ -46,4 +79,5 @@ public class ActionLibrary extends AppCompatActivity {
         itemList.add(new ListItem(R.drawable.ic_launcher_foreground, "俯身哑铃划船","dasdadsa"));
         itemList.add(new ListItem(R.drawable.ic_launcher_foreground, "俯身哑铃划船","dasdadsa"));
     }
+
 }
