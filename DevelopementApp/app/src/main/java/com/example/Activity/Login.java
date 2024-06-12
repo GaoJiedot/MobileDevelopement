@@ -62,5 +62,12 @@ public class Login extends AppCompatActivity {
                 }
             }
         });
+        binding.exitIv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.exit(0);//正常退出
+                System.exit(1);//非正常退出
+            }
+        });
     }
 }

@@ -1,5 +1,5 @@
-package com.example.adapter
-        ;
+package com.example.adapter;
+
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
 import com.example.Item.ListItem;
 import com.example.myapplication.R;
@@ -18,28 +17,40 @@ import com.example.myapplication.R;
 import java.util.List;
 
 public class ListAdapter extends ArrayAdapter<ListItem> {
-    private int resourceId;
+    private int resource;
 
     public ListAdapter(@NonNull Context context, int resource, @NonNull List<ListItem> objects) {
         super(context, resource, objects);
-        this.resourceId = resource;
+        this.resource = resource;
     }
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        ListItem listItem = getItem(position);
-        View view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);
-        ImageView imageView = view.findViewById(R.id.item_image);
-        TextView textView = view.findViewById(R.id.item_text);
-        TextView textView2 = view.findViewById(R.id.item_text2);
+    public View getView(int position, @NonNull View convertView, @NonNull ViewGroup parent) {
+        ListItem item = getItem(position);
 
-        if (listItem != null) {
-            imageView.setImageResource(listItem.getImageResId());
-            textView.setText(listItem.getName());
-            textView2.setText(listItem.getDescription());
+        ViewHolder holder;
+        if (convertView == null) {
+            convertView = LayoutInflater.from(getContext()).inflate(resource, parent, false);
+            holder = new ViewHolder();
+            holder.name = convertView.findViewById(R.id.item_text);
+            holder.description = convertView.findViewById(R.id.item_text2);
+            holder.imageResId = convertView.findViewById(R.id.item_image);
+            convertView.setTag(holder);
+        } else {
+            holder = (ViewHolder) convertView.getTag();
         }
 
-        return view;
+        holder.name.setText(item.getName());
+        holder.description.setText(item.getDescription());
+        holder.imageResId.setImageResource(item.getImageResId());
+
+        return convertView;
+    }
+
+    private static class ViewHolder {
+        TextView name;
+        TextView description;
+        ImageView imageResId;
     }
 }
