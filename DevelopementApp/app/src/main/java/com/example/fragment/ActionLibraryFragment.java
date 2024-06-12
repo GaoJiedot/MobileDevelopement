@@ -58,17 +58,22 @@ public class ActionLibraryFragment extends Fragment {
 
     private void populateItemList() {
         // Add your items to itemList here
-        itemList.add(new ListItem(R.drawable.nemo_background, "Item 1", "胸部"));
-        itemList.add(new ListItem(R.drawable.nemo_background, "Item 2", "手臂"));
-        itemList.add(new ListItem(R.drawable.nemo_background, "Item 3", "背部"));
-        itemList.add(new ListItem(R.drawable.nemo_background, "Item 4", "腿部"));
-        itemList.add(new ListItem(R.drawable.nemo_background, "Item 5", "臀部"));
-        itemList.add(new ListItem(R.drawable.nemo_background, "Item 6", "胸部"));
-        itemList.add(new ListItem(R.drawable.nemo_background, "Item 6", "胸部"));
-        itemList.add(new ListItem(R.drawable.nemo_background, "Item 6", "胸部"));
-        itemList.add(new ListItem(R.drawable.nemo_background, "Item 6", "胸部"));
-        itemList.add(new ListItem(R.drawable.nemo_background, "Item 6", "胸部"));
-        itemList.add(new ListItem(R.drawable.nemo_background, "Item 6", "胸部"));
+        itemList.add(new ListItem(R.drawable.nemo_background, "俯卧撑", "肱三头肌·胸肌中下束","手臂"));
+        itemList.add(new ListItem(R.drawable.nemo_background, "扩胸", "肱三头肌·胸肌中下束","胸部"));
+        itemList.add(new ListItem(R.drawable.nemo_background, "Item 3", "背部","背部"));
+        itemList.add(new ListItem(R.drawable.nemo_background, "Item 4", "腿部","腿部"));
+        itemList.add(new ListItem(R.drawable.nemo_background, "Item 4", "腿部","腿部"));
+        itemList.add(new ListItem(R.drawable.nemo_background, "Item 4", "腿部","腿部"));
+        itemList.add(new ListItem(R.drawable.nemo_background, "Item 4", "腿部","腿部"));
+        itemList.add(new ListItem(R.drawable.nemo_background, "Item 4", "腿部","腿部"));
+        itemList.add(new ListItem(R.drawable.nemo_background, "Item 4", "腿部","腿部"));
+        itemList.add(new ListItem(R.drawable.nemo_background, "Item 4", "腿部","腿部"));
+        itemList.add(new ListItem(R.drawable.nemo_background, "Item 4", "腿部","腿部"));
+        itemList.add(new ListItem(R.drawable.nemo_background, "Item 4", "腿部","腿部"));
+        itemList.add(new ListItem(R.drawable.nemo_background, "Item 4", "腿部","腿部"));
+        itemList.add(new ListItem(R.drawable.nemo_background, "Item 4", "腿部","腿部"));
+        itemList.add(new ListItem(R.drawable.nemo_background, "Item 4", "腿部","腿部"));
+
         // Add more items as needed
     }
 
@@ -78,7 +83,7 @@ public class ActionLibraryFragment extends Fragment {
             filteredItemList.addAll(itemList);
         } else {
             for (ListItem item : itemList) {
-                if (item.getDescription().equals(category)) {
+                if (item.getKind().equals(category)) {
                     filteredItemList.add(item);
                 }
             }
