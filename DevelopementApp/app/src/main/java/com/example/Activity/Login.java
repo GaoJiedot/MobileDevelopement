@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.text.LoginFilter;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -19,29 +20,28 @@ import com.example.fragment.HomeFragment;
 import com.example.fragment.MessageFragment;
 import com.example.fragment.SettingFragment;
 import com.example.myapplication.R;
+import com.example.myapplication.databinding.LoginBinding;
 
 public class Login extends AppCompatActivity {
 
-    private Button login_btn;
-    private EditText login_Et;
-    private CheckBox login_cb;
+    private  LoginBinding binding;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login);
 
-        login_Et = findViewById(R.id.login_et);
-        login_btn = findViewById(R.id.login_button);
-        login_cb = findViewById(R.id.login_cb);
+        binding=LoginBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
 
-        login_btn.setOnClickListener(new View.OnClickListener() {
+
+        binding.loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String phonenumber = login_Et.getText().toString();
-                boolean agreement = login_cb.isChecked();
+                String phonenumber = binding.loginEt.getText().toString();
+                boolean agreement = binding.loginCb.isChecked();
 
                 if (phonenumber.length() < 11) {
                     Toast.makeText(Login.this, "请输入完整的手机号", Toast.LENGTH_SHORT).show();
