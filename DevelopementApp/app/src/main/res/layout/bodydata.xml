@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/backgound_color">
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/frameLayout"
@@ -42,8 +41,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="369dp"
-        android:layout_height="143dp"
+        android:layout_height="140dp"
         android:background="@drawable/nv"
+        android:elevation="3dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,6 +106,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="369dp"
         android:layout_height="143dp"
+        android:elevation="3dp"
         android:background="@drawable/nv"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -171,6 +172,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="369dp"
         android:layout_height="143dp"
+        android:elevation="3dp"
         android:background="@drawable/nv"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
