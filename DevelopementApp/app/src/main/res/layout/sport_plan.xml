@@ -2,10 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout2"
+    android:id="@+id/sportplan_fg"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgound_color">
+    >
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/cookbook_back_iv"
+            android:id="@+id/sp_back_iv"
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:layout_gravity="center_vertical"
@@ -59,6 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_weight="1"
+            android:elevation="3dp"
             android:background="@drawable/bike_button"
             android:drawableLeft="@drawable/bike"
             android:gravity="center_vertical"
@@ -74,6 +75,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="20dp"
             android:layout_weight="1"
+            android:elevation="3dp"
             android:background="@drawable/run_button"
             android:drawableLeft="@drawable/run"
             android:gravity="center_vertical"
@@ -98,9 +100,12 @@
 
     <LinearLayout
         android:id="@+id/linearLayout6"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:elevation="3dp"
         android:background="@drawable/nv"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -160,6 +165,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
             app:srcCompat="@drawable/add" />
 
     </LinearLayout>

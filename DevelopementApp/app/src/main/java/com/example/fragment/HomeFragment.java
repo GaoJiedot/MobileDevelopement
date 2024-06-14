@@ -1,109 +1,108 @@
 package com.example.fragment;
 
 import android.content.Intent;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
+import android.view.TouchDelegate;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
-import com.example.Activity.BodyData;
-import com.example.Activity.CookBook;
-import com.example.Activity.SportPlan;
+import com.example.Item.ListItem2;
+import com.example.adapter.ListAdapter2;
+import com.example.myapplication.Action1;
+
 import com.example.myapplication.R;
 import com.example.myapplication.databinding.HomeBinding;
 
-import org.jetbrains.annotations.Nullable;
-
-import javax.security.auth.callback.Callback;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class HomeFragment extends Fragment {
     private HomeBinding binding;
+    private List<ListItem2> itemList = new ArrayList<>();
+    private ListAdapter2 listAdapter;
+    private EditText inputEditText;
 
+    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        binding = HomeBinding.inflate(getLayoutInflater());
-
-
-         return binding.getRoot();
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        binding = HomeBinding.inflate(inflater, container, false);
+        return binding.getRoot();
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.homeHomeIv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // 在 HomeFragment 所属的 Activity 中启动 SettingFragment
-                HomeFragment homeFragment = new HomeFragment();
-                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.home_fg, homeFragment);
-                transaction.addToBackStack(null);
-                transaction.commit();
-            }
-        });
-        binding.homeMyIv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // 在 HomeFragment 所属的 Activity 中启动 SettingFragment
-                SettingFragment settingFragment = new SettingFragment();
-                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.home_fg, settingFragment);
-                transaction.addToBackStack(null);
-                transaction.commit();
-            }
-        });
-        binding.homeMsgIv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MessageFragment messageFragment = new MessageFragment();
-                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.home_fg, messageFragment);
-                transaction.addToBackStack(null);
-                transaction.commit();
-            }
-        });
-        binding.homeAlIv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ActionLibraryFragment actionLibraryFragment = new ActionLibraryFragment();
-                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.home_fg, actionLibraryFragment);
-                transaction.addToBackStack(null);
-                transaction.commit();
-            }
-        });
-        binding.foodIv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        inputEditText = binding.editText3;
 
+        view.findViewById(R.id.searchBtn).setOnClickListener(v -> {
+            String inputText = inputEditText.getText().toString().trim();
+
+            if (inputText.isEmpty()) {
+                Toast.makeText(getActivity(), "请输入内容", Toast.LENGTH_SHORT).show();
+                return;
             }
-        });
-        binding.bodydataIv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), BodyData.class);
-                getActivity().startActivity(intent);
+
+            if (!Arrays.asList("俯卧撑","蜘蛛俯卧撑","扩胸","钻石俯卧撑","蛙泳划臂","俯身Y字伸展","深蹲","交替侧弓步","臀桥","小燕飞").contains(inputText)) {
+                Toast.makeText(getActivity(), "没有匹配的页面", Toast.LENGTH_SHORT).show();
+                return;
             }
-        });
-        binding.sportplanIv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), SportPlan.class);
-                getActivity().startActivity(intent);
-            }
+
+            Intent intent = new Intent(getActivity(), Action1.class);
+
+            intent.putExtra("inputText", inputText);
+            startActivity(intent);
+
         });
 
 
+        populateItemList2();
+        listAdapter = new ListAdapter2(requireContext(), R.layout.list_layout2, itemList);
+        binding.homeList.setAdapter(listAdapter);
+
+
+        binding.lbIv.setOnClickListener(v -> navigateToFragment(new ActionLibraryFragment()));
+        binding.foodIv.setOnClickListener(v -> navigateToFragment(new CookBookFragment()));
+        binding.bodydataIv.setOnClickListener(v -> navigateToFragment(new BodyDataFragment()));
+        binding.sportplanIv.setOnClickListener(v -> navigateToFragment(new SportPlanFragment()));
     }
 
+    private void navigateToFragment(Fragment fragment) {
+        requireActivity().getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fg, fragment)
+                .addToBackStack(null)
+                .commit();
+    }
 
+    private void populateItemList2() {
+
+        itemList.add(new ListItem2(R.drawable.nemo_background, "sdad", "sdad"));
+        itemList.add(new ListItem2(R.drawable.nemo_background, "sdad", "sdad"));
+        itemList.add(new ListItem2(R.drawable.nemo_background, "sdad", "sdad"));
+        itemList.add(new ListItem2(R.drawable.nemo_background, "sdad", "sdad"));
+        itemList.add(new ListItem2(R.drawable.nemo_background, "sdad", "sdad"));
+        itemList.add(new ListItem2(R.drawable.nemo_background, "sdad", "sdad"));
+        itemList.add(new ListItem2(R.drawable.nemo_background, "sdad", "sdad"));
+        itemList.add(new ListItem2(R.drawable.nemo_background, "sdad", "sdad"));
+        itemList.add(new ListItem2(R.drawable.nemo_background, "sdad", "sdad"));
+        itemList.add(new ListItem2(R.drawable.nemo_background, "sdad", "sdad"));
+        itemList.add(new ListItem2(R.drawable.nemo_background, "sdad", "sdad"));
+        itemList.add(new ListItem2(R.drawable.nemo_background, "sdad", "sdad"));
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
 }
