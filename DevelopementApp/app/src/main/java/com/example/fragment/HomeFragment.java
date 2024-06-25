@@ -62,7 +62,6 @@ public class HomeFragment extends Fragment {
 
         });
 
-
         populateItemList2();
         listAdapter = new ListAdapter2(requireContext(), R.layout.list_layout2, itemList);
         binding.homeList.setAdapter(listAdapter);

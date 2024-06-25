@@ -37,6 +37,7 @@
                 android:value="" />
         </activity>
         <activity android:name=".Action"/>
+        <activity android:name=".Setting"/>
     </application>
 
 </manifest>

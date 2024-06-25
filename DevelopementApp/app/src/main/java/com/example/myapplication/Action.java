@@ -4,13 +4,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.VideoView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.MyData;
+import com.example.fragment.HomeFragment;
 import com.google.gson.Gson;
 
 import java.io.BufferedReader;
@@ -26,12 +29,13 @@ public class Action extends AppCompatActivity {
     private Button btn;
     String inputText;
     String itemName;
+    private ImageView imageViewback;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.action1);
-
+        setContentView(R.layout.action);
+        imageViewback = findViewById(R.id.action_back_iv);
         textView = findViewById(R.id.title_tv);
         textView2 = findViewById(R.id.dc_tv);
         video = findViewById(R.id.video);
@@ -41,7 +45,7 @@ public class Action extends AppCompatActivity {
         inputText = intent.getStringExtra("inputText");
         Intent intent2 = getIntent();
         itemName = intent2.getStringExtra("itemName");
-        if (inputText != null){
+        if (inputText != null) {
             textView.setText(inputText);
 
             // 从 assets 目录下的 data.json 文件中读取数据
@@ -66,7 +70,7 @@ public class Action extends AppCompatActivity {
                 video.setVideoPath(selectedData.getVideoUrl());
             }
         }
-        if (itemName != null){
+        if (itemName != null) {
             textView.setText(itemName);
 
             // 从 assets 目录下的 data.json 文件中读取数据
@@ -93,11 +97,17 @@ public class Action extends AppCompatActivity {
         }
 
 
-
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 video.start();
+            }
+        });
+        imageViewback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+
             }
         });
     }

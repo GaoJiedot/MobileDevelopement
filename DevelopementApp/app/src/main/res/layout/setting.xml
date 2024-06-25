@@ -13,13 +13,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNavigationView3"
+        <LinearLayout
+            android:id="@+id/sz"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
+            android:elevation="3dp"
             android:background="@drawable/nv"
             app:layout_constraintTop_toBottomOf="@+id/bottomNavigationView30"
             tools:layout_editor_absoluteX="15dp">
@@ -51,14 +52,15 @@
 
             </LinearLayout>
 
-        </com.google.android.material.bottomnavigation.BottomNavigationView>
+        </LinearLayout>
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
+        <LinearLayout
             android:id="@+id/bottomNavigationView30"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
+            android:elevation="3dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/nv"
             app:layout_constraintTop_toBottomOf="@+id/bottomNavigationView4"
@@ -92,7 +94,7 @@
 
             </LinearLayout>
 
-        </com.google.android.material.bottomnavigation.BottomNavigationView>
+        </LinearLayout>
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imageView2"
