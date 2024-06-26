@@ -18,69 +18,39 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.example.Item.ListItem3;
+import com.example.adapter.ListAdapter;
+import com.example.adapter.ListAdapter3;
+import com.example.myapplication.R;
+import com.example.myapplication.Share;
 import com.example.myapplication.databinding.MessageBinding;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MessageFragment extends Fragment {
     private MessageBinding binding;
-    private static final int REQUEST_IMAGE_PICK = 1;
-    private static final int REQUEST_PERMISSIONS = 2;
+    private List<ListItem3> itemList = new ArrayList<>();
+    private ListAdapter3 listAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = MessageBinding.inflate(inflater, container, false);
-
-        binding.msgAddIv.setOnClickListener(v -> {
-            if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                // Request permissions
-                ActivityCompat.requestPermissions(requireActivity(),
-                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
-                        REQUEST_PERMISSIONS);
-            } else {
-                // Open gallery to pick image
-                openGallery();
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
+        listAdapter= new ListAdapter3(requireContext(), R.layout.list_layout3, itemList);
+        binding.recyclerView.setAdapter(listAdapter);
+        itemList.add(new ListItem3(R.drawable.nemo_background,"1","1",R.drawable.nemo_background));
+        binding.msgAddIv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), Share.class));
             }
         });
-
         return binding.getRoot();
-    }
-
-    private void openGallery() {
-        Intent pickPhotoIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        startActivityForResult(pickPhotoIntent, REQUEST_IMAGE_PICK);
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == REQUEST_PERMISSIONS) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                openGallery();
-            } else {
-                // Permission denied
-                // Handle the case where the user denied the permissions
-            }
-        }
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_IMAGE_PICK && resultCode == RESULT_OK && data != null) {
-            Uri selectedImageUri = data.getData();
-            if (selectedImageUri != null) {
-                try {
-                    Bitmap imageBitmap = MediaStore.Images.Media.getBitmap(requireActivity().getContentResolver(), selectedImageUri);
-                    binding.uploadIv.setImageBitmap(imageBitmap);
-                    // TODO: Upload the image to your server or handle it as needed
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
     }
 }

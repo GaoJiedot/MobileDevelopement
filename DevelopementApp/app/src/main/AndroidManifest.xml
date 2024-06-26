@@ -38,6 +38,7 @@
         </activity>
         <activity android:name=".Action"/>
         <activity android:name=".Setting"/>
+        <activity android:name=".Share"/>
     </application>
 
 </manifest>
