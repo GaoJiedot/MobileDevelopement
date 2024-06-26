@@ -13,11 +13,11 @@ import com.example.myapplication.R;
 
 import java.util.List;
 
-public class ListAdapter4 extends RecyclerView.Adapter<ListAdapter4.ViewHolder> {
+public class ListItemAdapter4 extends RecyclerView.Adapter<ListItemAdapter4.ViewHolder> {
     private List<ListItem4> itemList;
     private Context context;
 
-    public ListAdapter4(Context context, List<ListItem4> itemList) {
+    public ListItemAdapter4(Context context, List<ListItem4> itemList) {
         this.context = context;
         this.itemList = itemList;
     }
