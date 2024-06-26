@@ -81,19 +81,15 @@ public class HomeFragment extends Fragment {
     }
 
     private void populateItemList2() {
+        itemList.add(new ListItem2(R.drawable.nemo_background, "腹肌撕裂2022", "斯帕奇健身官方课"));
+        itemList.add(new ListItem2(R.drawable.nemo_background, "手臂撕裂者", "斯帕奇健身官方课"));
+        itemList.add(new ListItem2(R.drawable.nemo_background, "帕梅拉15分钟快乐舞", "跳的很轻松，汗也很"));
+        itemList.add(new ListItem2(R.drawable.nemo_background, "帕梅拉10分钟挥汗舞蹈", "帕梅拉"));
+        itemList.add(new ListItem2(R.drawable.nemo_background, "帕梅拉10分钟挥汗舞蹈", "帕梅拉"));
+        itemList.add(new ListItem2(R.drawable.nemo_background, "帕梅拉10分钟挥汗舞蹈", "帕梅拉"));
+        itemList.add(new ListItem2(R.drawable.nemo_background, "帕梅拉10分钟挥汗舞蹈", "帕梅拉"));
 
-        itemList.add(new ListItem2(R.drawable.nemo_background, "sdad", "sdad"));
-        itemList.add(new ListItem2(R.drawable.nemo_background, "sdad", "sdad"));
-        itemList.add(new ListItem2(R.drawable.nemo_background, "sdad", "sdad"));
-        itemList.add(new ListItem2(R.drawable.nemo_background, "sdad", "sdad"));
-        itemList.add(new ListItem2(R.drawable.nemo_background, "sdad", "sdad"));
-        itemList.add(new ListItem2(R.drawable.nemo_background, "sdad", "sdad"));
-        itemList.add(new ListItem2(R.drawable.nemo_background, "sdad", "sdad"));
-        itemList.add(new ListItem2(R.drawable.nemo_background, "sdad", "sdad"));
-        itemList.add(new ListItem2(R.drawable.nemo_background, "sdad", "sdad"));
-        itemList.add(new ListItem2(R.drawable.nemo_background, "sdad", "sdad"));
-        itemList.add(new ListItem2(R.drawable.nemo_background, "sdad", "sdad"));
-        itemList.add(new ListItem2(R.drawable.nemo_background, "sdad", "sdad"));
+
     }
 
     @Override
