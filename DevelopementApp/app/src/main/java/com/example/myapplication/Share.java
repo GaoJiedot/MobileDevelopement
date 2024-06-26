@@ -18,7 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.example.Item.ListItem4;
+
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -31,7 +31,6 @@ public class Share extends AppCompatActivity {
     private TextView textView;
     private Button button;
     private ImageView imageView;
-    private List<ListItem4> itemList = new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
