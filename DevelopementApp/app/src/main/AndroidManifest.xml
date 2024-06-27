@@ -36,9 +36,10 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".Action"/>
-        <activity android:name=".Setting"/>
-        <activity android:name=".Share"/>
+        <activity android:name=".Action" />
+        <activity android:name=".Setting" />
+        <activity android:name=".Share" />
+        <activity android:name=".BMI" />
     </application>
 
 </manifest>

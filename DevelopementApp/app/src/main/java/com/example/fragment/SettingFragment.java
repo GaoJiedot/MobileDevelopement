@@ -10,6 +10,7 @@
     import androidx.annotation.Nullable;
     import androidx.fragment.app.Fragment;
 
+    import com.example.myapplication.BMI;
     import com.example.myapplication.R;
     import com.example.myapplication.Setting;
     import com.example.myapplication.databinding.SettingBinding;
@@ -21,7 +22,7 @@
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             binding = SettingBinding.inflate(getLayoutInflater());
 
-          binding.jksj.setOnClickListener(v -> navigateToFragment(new BodyDataFragment()));
+          binding.jksj.setOnClickListener (v ->startActivity(new Intent(getActivity(), BMI.class)));
           binding.stsjSet.setOnClickListener(v -> navigateToFragment(new BodyDataFragment()));
             binding.sz.setOnClickListener(v -> startActivity(new Intent(getActivity(), Setting.class)));
 
