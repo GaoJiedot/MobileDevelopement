@@ -105,7 +105,7 @@
                     <ImageView
                         android:id="@+id/bodydata_iv"
                         android:layout_width="match_parent"
-                        android:layout_height="60dp"
+                        android:layout_height="63dp"
                         app:srcCompat="@drawable/sport" />
 
                     <TextView
@@ -113,7 +113,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="身体数据" />
+                        android:text="热门视频" />
                 </LinearLayout>
 
                 <LinearLayout
