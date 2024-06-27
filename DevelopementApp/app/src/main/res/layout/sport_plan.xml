@@ -54,26 +54,11 @@
         app:layout_constraintTop_toBottomOf="@+id/frameLayout">
 
         <android.widget.Button
-            android:id="@+id/button5"
+            android:id="@+id/run_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_weight="1"
-            android:elevation="3dp"
-            android:background="@drawable/bike_button"
-            android:drawableLeft="@drawable/bike"
-            android:gravity="center_vertical"
-            android:paddingLeft="5dp"
-            android:text="开始骑行"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
-
-        <android.widget.Button
-            android:id="@+id/button3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
             android:layout_weight="1"
             android:elevation="3dp"
             android:background="@drawable/run_button"
@@ -113,61 +98,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-        <LinearLayout
+        <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imageView11"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:srcCompat="@mipmap/datizhong_round" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView34"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="10dp"
-                    android:text="大体重·全身燃脂计划"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/textView35"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="5dp"
-                    android:text="按照日程跟练，可以逐步提升效果" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <ImageView
-            android:id="@+id/imageView16"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="10dp"
-            app:srcCompat="@drawable/add" />
-
+            android:layout_height="match_parent" />
     </LinearLayout>
 
 

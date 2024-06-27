@@ -1,15 +1,10 @@
-package com.example.fragment;
+package com.example.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.Item.ListItem;
 import com.example.adapter.ListAdapter;
@@ -20,7 +15,7 @@ import com.example.myapplication.databinding.ActionlibraryBinding;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ActionLibraryFragment extends Fragment implements ListAdapter.OnListItemClickListener {
+public class ActionLibrary extends AppCompatActivity implements ListAdapter.OnListItemClickListener {
     private String[] data = {"全部运动", "胸部", "手臂", "背部", "腿部", "臀部"};
     private List<ListItem> itemList = new ArrayList<>();
     private List<ListItem> filteredItemList = new ArrayList<>();
@@ -28,15 +23,17 @@ public class ActionLibraryFragment extends Fragment implements ListAdapter.OnLis
     private ListAdapter listAdapter;
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        binding = ActionlibraryBinding.inflate(inflater, container, false);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        binding = ActionlibraryBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(requireContext(), R.layout.list_layout1, data);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, R.layout.list_layout1, data);
         binding.alLv.setAdapter(arrayAdapter);
 
         populateItemList();
 
-        listAdapter = new ListAdapter(requireContext(), R.layout.list_layout2, filteredItemList, this);
+        listAdapter = new ListAdapter(this, R.layout.list_layout2, filteredItemList, this);
         binding.alLv2.setAdapter(listAdapter);
 
         binding.alLv.setOnItemClickListener((parent, view, position, id) -> {
@@ -47,18 +44,12 @@ public class ActionLibraryFragment extends Fragment implements ListAdapter.OnLis
         // Show all items initially
         filterItemList("全部运动");
 
-        View view = binding.getRoot();
-        binding.alBackIv.setOnClickListener(v -> {
-            if (getActivity() != null) {
-                getActivity().getSupportFragmentManager().popBackStack();
-            }
-        });
-        return view;
+        binding.alBackIv.setOnClickListener(v -> finish());
     }
 
     @Override
-    public void onDestroyView() {
-        super.onDestroyView();
+    protected void onDestroy() {
+        super.onDestroy();
         // Prevent memory leaks
         binding = null;
     }
@@ -96,7 +87,7 @@ public class ActionLibraryFragment extends Fragment implements ListAdapter.OnLis
 
     @Override
     public void onListItemClick(ListItem item) {
-        Intent intent = new Intent(getActivity(), Action.class);
+        Intent intent = new Intent(this, Action.class);
         intent.putExtra("itemName", item.getName());
         startActivity(intent);
     }

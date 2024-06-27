@@ -54,6 +54,10 @@
         <activity android:name=".Share" />
         <activity android:name=".BMI" />
         <activity android:name=".SportVideo"/>
+        <activity android:name=".Run"/>
+        <activity android:name=".SportPlan"/>
+        <activity android:name=".CookBook"/>
+        <activity android:name=".ActionLibrary"/>
     </application>
 
 </manifest>

@@ -16,7 +16,10 @@ import com.example.Item.ListItem2;
 import com.example.adapter.ListAdapter2;
 import com.example.myapplication.Action;
 
+import com.example.myapplication.ActionLibrary;
+import com.example.myapplication.CookBook;
 import com.example.myapplication.R;
+import com.example.myapplication.SportPlan;
 import com.example.myapplication.SportVideo;
 import com.example.myapplication.databinding.HomeBinding;
 
@@ -68,10 +71,10 @@ public class HomeFragment extends Fragment {
         binding.homeList.setAdapter(listAdapter);
 
 
-        binding.lbIv.setOnClickListener(v -> navigateToFragment(new ActionLibraryFragment()));
-        binding.foodIv.setOnClickListener(v -> navigateToFragment(new CookBookFragment()));
+        binding.lbIv.setOnClickListener(v -> startActivity(new Intent(getActivity(), ActionLibrary.class)));
+        binding.foodIv.setOnClickListener(v -> startActivity(new Intent(getActivity(), CookBook.class)));
         binding.bodydataIv.setOnClickListener(v ->startActivity(new Intent(getActivity(), SportVideo.class)));
-        binding.sportplanIv.setOnClickListener(v -> navigateToFragment(new SportPlanFragment()));
+        binding.sportplanIv.setOnClickListener(v -> startActivity(new Intent(getActivity(), SportPlan.class)));
     }
 
     private void navigateToFragment(Fragment fragment) {
