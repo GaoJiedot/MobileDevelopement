@@ -89,7 +89,7 @@
                     android:layout_weight="1"
                     android:gravity="center_vertical"
                     android:paddingLeft="20dp"
-                    android:text="健康数据"
+                    android:text="BMI计算"
                     android:textSize="18sp" />
 
             </LinearLayout>
