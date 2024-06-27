@@ -75,7 +75,6 @@ public class CookBookFragment extends Fragment {
     }
 
     private void fetchRecipes(String menu) {
-        // 确保关键字有效且长度适当
         if (menu == null || menu.trim().isEmpty() || menu.length() > 100) {
             Log.e("CookBookFragment", "Invalid menu keyword");
             return;
@@ -95,26 +94,48 @@ public class CookBookFragment extends Fragment {
             @Override
             public void onResponse(Call<RecipeResponse> call, Response<RecipeResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
-                    Log.d("CookBookFragment", "Response body: " + response.body().toString());
-                    List<RecipeResult> results = response.body().getResult();
-                    if (results != null) {
+                    RecipeResponse recipeResponse = response.body();
+                    Log.d("CookBookFragment", "Response body: " + recipeResponse.toString());
+
+                    if (recipeResponse.getErrorCode() != 0) {
+                        Log.e("CookBookFragment", "API error: " + recipeResponse.getReason());
+                        // 在UI上显示错误信息
+                        showError(recipeResponse.getReason());
+                        return;
+                    }
+
+                    List<RecipeResult> results = recipeResponse.getResult();
+                    if (results != null && !results.isEmpty()) {
                         recipeList.clear();
                         recipeList.addAll(results);
                         recipeAdapter.notifyDataSetChanged();
+                        Log.d("CookBookFragment", "Recipes found: " + results.size());
                     } else {
                         Log.e("CookBookFragment", "No recipes found");
+                        showError("未找到相关食谱");
                     }
                 } else {
                     Log.e("CookBookFragment", "Failed to fetch recipes: " + response.message());
+                    showError("获取食谱失败");
                 }
             }
 
             @Override
             public void onFailure(Call<RecipeResponse> call, Throwable t) {
                 Log.e("CookBookFragment", "API call failed", t);
+                showError("网络请求失败");
             }
         });
     }
+
+    private void showError(String message) {
+        if (getActivity() != null) {
+            getActivity().runOnUiThread(() -> {
+                Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+            });
+        }
+    }
+
 
 
     @Override
